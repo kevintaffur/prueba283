@@ -59,8 +59,29 @@
   },
   {
     "ContainingType": "api.Controllers.CuentaController",
+    "Method": "CalculoInteres",
+    "RelativePath": "api/v1/cuentas/calculo-interes/{id}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "intereses",
+        "Type": "api.Dtos.Cuentas.InteresesDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "api.Controllers.CuentaController",
     "Method": "CambioDeMoneda",
-    "RelativePath": "api/v1/cuentas/{id}",
+    "RelativePath": "api/v1/cuentas/cambio-moneda/{id}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -73,43 +94,6 @@
       {
         "Name": "cambio",
         "Type": "api.Dtos.Cuentas.CambioMonedaDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "api.Controllers.CuentaController",
-    "Method": "Modificar",
-    "RelativePath": "api/v1/cuentas/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "cuenta",
-        "Type": "api.Dtos.Productos.CuentaModificacionDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "api.Controllers.CuentaController",
-    "Method": "ObtenerPorId",
-    "RelativePath": "api/v1/cuentas/{id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

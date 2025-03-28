@@ -108,7 +108,7 @@
         }
       }
     },
-    "/api/v1/cuentas/{id}": {
+    "/api/v1/cuentas/cambio-moneda/{id}": {
       "post": {
         "tags": [
           "Cuenta"
@@ -148,8 +148,10 @@
             "description": "Success"
           }
         }
-      },
-      "put": {
+      }
+    },
+    "/api/v1/cuentas/calculo-interes/{id}": {
+      "post": {
         "tags": [
           "Cuenta"
         ],
@@ -168,42 +170,21 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CuentaModificacionDto"
+                "$ref": "#/components/schemas/InteresesDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CuentaModificacionDto"
+                "$ref": "#/components/schemas/InteresesDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CuentaModificacionDto"
+                "$ref": "#/components/schemas/InteresesDto"
               }
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "Cuenta"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "Success"
@@ -269,37 +250,12 @@
         },
         "additionalProperties": false
       },
-      "CuentaModificacionDto": {
+      "InteresesDto": {
         "type": "object",
         "properties": {
-          "numeroCuenta": {
+          "dias": {
             "type": "integer",
-            "format": "int32",
-            "nullable": true
-          },
-          "division": {
-            "type": "string",
-            "nullable": true
-          },
-          "moneda": {
-            "pattern": "^(USD|EUR|GBP)$",
-            "type": "string",
-            "nullable": true
-          },
-          "saldo": {
-            "type": "number",
-            "format": "double",
-            "nullable": true
-          },
-          "fechaCreacion": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "estado": {
-            "pattern": "^[NAI]$",
-            "type": "string",
-            "nullable": true
+            "format": "int32"
           }
         },
         "additionalProperties": false

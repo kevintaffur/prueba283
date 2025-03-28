@@ -113,5 +113,28 @@ namespace api.Services
 
             return cuenta;
         }
+
+        public async Task<decimal> CalculoInteres(int id, int dias)
+        {
+            // se asume una tasa de interés del 3%.
+            int tasaInteres = 3;
+
+            if (dias <= 0)
+            {
+                return 0;
+            }
+
+            Cuenta cuenta = await Repo.ObtenerPorId(id);
+            if (cuenta == null)
+            {
+                return 0;
+            }
+            if (cuenta.Division.Equals("AHORROS"))
+            {
+                return Math.Round(cuenta.Saldo * tasaInteres * (dias / 365M), 2);
+            }
+
+            return 0;
+        }
     }
 }

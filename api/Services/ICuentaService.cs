@@ -11,5 +11,6 @@ namespace api.Services
         Task<Cuenta> Crear(CuentaCreacionDto cuentaCreacionDto);
         Task<Cuenta> Modificar(int id, CuentaModificacionDto cuentaModificacionDto);
         Task<Cuenta> CambioSaldoADestino(int id, string destino);
+        Task<decimal> CalculoInteres(int id, int dias);
     }
 }
