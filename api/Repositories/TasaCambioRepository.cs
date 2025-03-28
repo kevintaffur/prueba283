@@ -30,16 +30,16 @@ namespace api.Repositories
 
         public async Task<TasasCambio> ObtenerPorOrigen(string origen)
         {
-            return await Context.TasasCambios.Where(tc => tc.Estado.Equals("N") && tc.MonedaOrigen.ToUpper().Equals(origen.ToUpper()) && tc.MonedaDestino.Equals("USD")).FirstOrDefaultAsync();
+            return await Context.TasasCambios.Where(tc => !tc.Estado.Equals("N") && tc.MonedaOrigen.ToUpper().Equals(origen.ToUpper()) && tc.MonedaDestino.Equals("USD")).FirstOrDefaultAsync();
         }
         public async Task<TasasCambio> ObtenerParaCambio(string origen, string destino)
         {
-            return await Context.TasasCambios.Where(tc => tc.Estado.Equals("N") && tc.MonedaOrigen.ToUpper().Equals(origen.ToUpper()) && tc.MonedaDestino.ToUpper().Equals(destino.ToUpper())).FirstOrDefaultAsync();
+            return await Context.TasasCambios.Where(tc => !tc.Estado.Equals("N") && tc.MonedaOrigen.ToUpper().Equals(origen.ToUpper()) && tc.MonedaDestino.ToUpper().Equals(destino.ToUpper())).FirstOrDefaultAsync();
         }
 
         public async Task<List<TasasCambio>> ObtenerTodas()
         {
-            return await Context.TasasCambios.Where(tc => tc.Estado.Equals("N")).ToListAsync();
+            return await Context.TasasCambios.Where(tc => !tc.Estado.Equals("N")).ToListAsync();
         }
     }
 }

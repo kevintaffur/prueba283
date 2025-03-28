@@ -163,3 +163,4 @@ C:\Users\Kevin\source\repos\prueba283\base\api\obj\Debug\net6.0\refint\api.dll
 C:\Users\Kevin\source\repos\prueba283\base\api\obj\Debug\net6.0\api.pdb
 C:\Users\Kevin\source\repos\prueba283\base\api\obj\Debug\net6.0\api.genruntimeconfig.cache
 C:\Users\Kevin\source\repos\prueba283\base\api\obj\Debug\net6.0\ref\api.dll
+C:\Users\Kevin\source\repos\prueba283\base\api\obj\Debug\net6.0\api.sourcelink.json
